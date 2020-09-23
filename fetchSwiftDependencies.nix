@@ -16,9 +16,9 @@ let
 
   fetchSwiftModule = { url, rev, name }: { swiftDeps ? [ ] }:
     stdenv.mkDerivation rec {
-      inherit rev name url;
+      inherit name url;
       src = builtins.fetchGit {
-        inherit url;
+        inherit rev url;
       };
       buildInputs = [ swift ];
 
